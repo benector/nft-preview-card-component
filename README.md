@@ -1,92 +1,80 @@
-# Frontend Mentor - NFT preview card component
+# Frontend Mentor - NFT preview card component solution
 
-![Design preview for the NFT preview card component coding challenge](./design/desktop-preview.jpg)
+This is my a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). 
 
-## Welcome! 👋
+![image](https://user-images.githubusercontent.com/62683935/218565024-05b6fb72-fdfd-4edb-bc4c-864d8283e4d6.png)
+ 
 
-Thanks for checking out this front-end coding challenge.
+## Table of contents
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this preview card component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 - See hover states for interactive elements
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
+- Desktop active
+![image](https://user-images.githubusercontent.com/62683935/218567310-8b2e18a7-e3b5-40ad-89a2-e81a54df7c50.png)
 
-## Where to find everything
+- Mobile
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+<img src="https://user-images.githubusercontent.com/62683935/218565928-bf3949d1-327e-494d-b768-f3cbad8fdb98.png" width="30%"/>
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Tablet
+<img src="https://user-images.githubusercontent.com/62683935/218566978-5fd35af5-b7b7-4cb8-b43b-e2336bdd6a2c.png" width="30%"/>
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Links
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Live Site URL: [GitHub Page for this project](https://benector.github.io/nft-preview-card-component/)
 
-## Building your project
+## My process
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Built with
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-## Deploying your project
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+### What I learned
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+The most difficult part to me was center the content on desktop view, I often lack on it in my projects because I always try first  to achieve that without using flexbox. Later I found that even mobile view was not that good because I was using margin to center the content and I wanted that to be automated. I found easier to use flexbox then, ```align-items``` solves almost all the problems and I think it worked well, but if there's a better way to do this I really wanna know and save the knowledge for life.  I have the thought that the most I can work with "pure old css" the more skilled  I am , that's why I try the hardest first, but maybe that's not the way, I searched up for many solutions to center content and I couldn't see how they were better than using flexbox.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+The second dificuld part was doing overlay, I saw solutions where the ```img```  element was turned into a ```div```  with the image itself being the background, but it seemed bad for me, specially because I'm trying to use semantic html for accessibility purposes. So I found another way using img element and a ```div``` for overlay, I learned that the parent component must be positioned as ```relative``` and then the overlay ```div``` must be ```absolute``` positioned. Sometime I noticed that the overlay element was bigger in size than the ```img``` element and it wasn't good, then I found that the img element needed the ```display:block``` property.
 
-## Create a custom `README.md`
+Also I needed change opacity color of the overlay background but there's an svg icon inside this element and it was inheriting the opacity of the overlay component, then the final effect wasn't the correct. It happend because I set the background color using hsl colors, in that way I couldn't set opacity on color so I used the opacity propety on div only but that affected the whole component, so I decide to use rgb to set opacity on background and turned opacity of the overlay component to 1, so its content would show up correctly along.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+### Continued development
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I want to build responsive layouts more fluently and master image manipulation and position, I also want to focus on writing better semantic html and care for acessibility. Althoug it's not in this challenge, may I get some in the future, I would to like to build good animations and transitions. This is my first challenge, although I work with frontend for some years I've never wrote about the things I built so this is something new to me and I think it's good to perpetue my knowledge, I wish I can keep up that. Also english is not my first language so I'm practicing this point too. Thanks!.
 
-## Submitting your solution
+### Useful resources
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+- [Guide to image overlays in CSS](https://blog.logrocket.com/guide-image-overlays-css/) - This helped me to understand how to use position property to do overlays.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
 
-## Sharing your solution
+## Author
 
-There are multiple places you can share your solution:
+- Linkedin - [Beatriz Benedicto](https://www.linkedin.com/in/beatrizbenedicto/)
+- Frontend Mentor - [@benector](https://www.frontendmentor.io/profile/benector)
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
